@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import API from '../API'
+import Beer from '../components/Beer'
 
 export default class BeersContainer extends Component {
 
@@ -9,13 +10,16 @@ export default class BeersContainer extends Component {
 
     componentDidMount = () => {
         API.getAllBeers().then(data => {
-            console.log(data);
+            this.setState({beers: data})
         })
       }
+    
+    renderAllBeers = () => this.state.beers.map(beer => <Beer beer={beer}/> )
 
     render() {
         return (
             <div>
+                { this.renderAllBeers() }
             </div>
         )
     }
