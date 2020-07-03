@@ -10,7 +10,7 @@ export default class BeersContainer extends Component {
 
     componentDidMount = () => {
         API.getAllBeers().then(data => {
-            this.setState({beers: data})
+            this.setState( {beers: data} )
         })
       }
     
