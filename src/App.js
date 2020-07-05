@@ -3,7 +3,7 @@ import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import BeersContainer from './containers/BeersContainer'
 import Menu from './components/Menu'
-import { Card, Icon, Image, Button, Segment } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 import API from './API'
 
 // import HomePage from './components/HomePage'
@@ -18,7 +18,7 @@ export default class App extends Component {
 
   componentDidMount = () => {
       API.getAllBeers().then(data => {
-          this.setState( {beers: data} )
+          this.setState( { beers: data } )
       })
     }
 
@@ -27,7 +27,7 @@ export default class App extends Component {
   }  
 
   updateFilter = (e) => {
-    this.setState({search: e.target.value})
+    this.setState({ search: e.target.value })
   }
 
   filterBySearch = (arrayOfIBeers) => {
