@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import BeersContainer from './containers/BeersContainer'
+// import HomePage from './components/HomePage'
 
 function App() {
   return (
