@@ -5,7 +5,7 @@ export default class BeerDetails extends Component {
     render() {
         const beer = this.props.beer
         return (
-            <Segment padded>
+            <Segment padded inverted tertiary>
                 <Card centered>
                     <Image size='small' centered src={beer.image_url} />
                     <Card.Content>

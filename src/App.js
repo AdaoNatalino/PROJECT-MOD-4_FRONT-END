@@ -1,15 +1,51 @@
-import React from 'react';
+import React, {Component } from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import BeersContainer from './containers/BeersContainer'
+import Menu from './components/Menu'
+import { Card, Icon, Image, Button, Segment } from 'semantic-ui-react'
+import API from './API'
+
 // import HomePage from './components/HomePage'
 
-function App() {
-  return (
-    <div className="App">
-      <BeersContainer />
-    </div>
-  );
+export default class App extends Component {
+
+  state = {
+    beers: [],
+    beerToView: null,
+    search: ""
 }
 
-export default App;
+  componentDidMount = () => {
+      API.getAllBeers().then(data => {
+          this.setState( {beers: data} )
+      })
+    }
+
+  selectBeerToView = (beer) => {
+  this.setState({ beerToView: beer })
+  }  
+
+  updateFilter = (e) => {
+    this.setState({search: e.target.value})
+  }
+
+  filterBySearch = (arrayOfIBeers) => {
+    return arrayOfIBeers.filter(beer => beer.name.toLowerCase().includes(this.state.search.toLocaleLowerCase()))
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Segment>
+          <Menu updateFilter={this.updateFilter} centered vertical />
+        </Segment>
+        <BeersContainer 
+        handleClick={this.selectBeerToView}
+        beerToView={this.state.beerToView}
+        beers={this.filterBySearch(this.state.beers)}/>
+      </div>
+    );
+  }
+}
+

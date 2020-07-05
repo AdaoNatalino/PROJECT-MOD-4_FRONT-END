@@ -12,7 +12,7 @@ export default class Beer extends Component {
     render() {
         const beer = this.props.beer
         return (
-            <Card>
+            <Card centered>
             <Image size="tiny" centered src={beer.image_url} />
             <Card.Content>
             <Card.Header>{beer.name}</Card.Header>

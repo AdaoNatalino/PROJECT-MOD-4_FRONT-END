@@ -5,26 +5,10 @@ import BeerDetails from '../components/BeerDetails'
 import { Card } from 'semantic-ui-react'
 
 export default class BeersContainer extends Component {
-
-    state = {
-        beers: [],
-        beerToView: null,
-    }
-
-    componentDidMount = () => {
-        API.getAllBeers().then(data => {
-            this.setState( {beers: data} )
-        })
-      }
-
-    selectBeerToView = (beer) => {
-    this.setState({ beerToView: beer })
-    }  
     
-    
-    renderAllBeers = () => this.state.beers.map(beer => 
+    renderAllBeers = () => this.props.beers.map(beer => 
         <BeerCard
-         handleClick={this.selectBeerToView} 
+         handleClick={this.props.handleClick} 
          key={beer.id} 
          beer={beer}/> 
     )
@@ -33,10 +17,10 @@ export default class BeersContainer extends Component {
         return (
             <Card.Group itemsPerRow={4}>
                 <div className="ui four column grid">
-                    {this.state.beerToView
+                    {this.props.beerToView
                     ? <BeerDetails 
-                        handleClick={this.selectBeerToView}
-                        beer={this.state.beerToView} 
+                        handleClick={this.props.handleClick}
+                        beer={this.props.beerToView} 
                     />
                     : this.renderAllBeers() }
                 </div>
