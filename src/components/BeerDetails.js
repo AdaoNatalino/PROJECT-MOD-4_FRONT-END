@@ -29,7 +29,7 @@ export default class BeerDetails extends Component {
                     </Card.Content>
                     <Card.Content >
                         <Button positive>
-                         <Icon name='cart plus' /> Buy
+                         <Icon name='cart plus' /> Add to Cart
                         </Button>
                         <Button
                          onClick={() => this.props.handleClick(null)}

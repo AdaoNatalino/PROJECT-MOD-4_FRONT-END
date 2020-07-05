@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Input, Menu } from 'semantic-ui-react'
+import { Input, Menu, Icon } from 'semantic-ui-react'
 
 export default class MenuExampleSecondary extends Component {
   state = { activeItem: 'home' }
@@ -10,26 +10,33 @@ export default class MenuExampleSecondary extends Component {
     const { activeItem } = this.state
 
     return (
-      <Menu secondary>
+      <Menu pointing fixed="top" inverted>
         <Menu.Item
           name='home'
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
+
         />
         <Menu.Item
-          name='messages'
-          active={activeItem === 'messages'}
+          name='My Cart'                    
+          active={activeItem === 'My Cart'}
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name='friends'
-          active={activeItem === 'friends'}
+          name='Account Details'
+          active={activeItem === 'Account Details'}
           onClick={this.handleItemClick}
         />
         <Menu.Menu position='right'>
+       
           <Menu.Item>
             <Input onChange={this.props.updateFilter} icon='search' placeholder='Search...' />
           </Menu.Item>
+          <Menu.Item
+            name='login'
+            active={activeItem === 'login'}
+            onClick={this.handleItemClick}
+          />
           <Menu.Item
             name='logout'
             active={activeItem === 'logout'}
