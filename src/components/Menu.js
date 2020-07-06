@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
 import LoginForm from './LoginForm'
+import { BeerConsumer } from "../Context"
 
 export default class MenuExampleSecondary extends Component {
   state = { activeItem: 'home' }
@@ -14,6 +15,8 @@ export default class MenuExampleSecondary extends Component {
 
   render() {
     const { activeItem } = this.state
+
+    const { updateFilter } = this.props.menuExampleSecondary
 
     return (
       <Menu pointing fixed="top" inverted>
@@ -36,7 +39,9 @@ export default class MenuExampleSecondary extends Component {
         <Menu.Menu position='right'>
        
           <Menu.Item>
-            <Input onChange={this.props.updateFilter} icon='search' placeholder='Search...' />
+            <BeerConsumer>
+            <Input onChange={updateFilter} icon='search' placeholder='Search...' />
+            </BeerConsumer>
           </Menu.Item>
           <Menu.Item
             name='login'

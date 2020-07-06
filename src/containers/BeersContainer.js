@@ -4,6 +4,7 @@ import BeerDetails from '../components/BeerDetails'
 import { Card } from 'semantic-ui-react'
 
 export default class BeersContainer extends Component {
+
     
     renderAllBeers = () => this.props.beers.map(beer => 
         <BeerCard
