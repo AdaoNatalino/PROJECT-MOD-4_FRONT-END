@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
-import { Card, Icon, Image, Button, Segment } from 'semantic-ui-react'
+import { Card, Icon, Image, Button } from 'semantic-ui-react'
 
 export default class Beer extends Component {
     render() {
         const beer = this.props.beer
-        return (
-            <Segment color="teal" inverted tertiary>
-                
-                <Card>
+        return (   
+            <Card centered>
                 <Image size="tiny" centered src={beer.image_url} />
                 <Card.Content>
                 <Card.Header>{beer.name}</Card.Header>
@@ -27,7 +25,6 @@ export default class Beer extends Component {
                 </Button>
                 </Card.Content>
             </Card> 
-        </Segment>
         )
     }
 }

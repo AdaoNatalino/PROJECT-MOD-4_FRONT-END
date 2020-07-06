@@ -6,4 +6,23 @@ const getAllBeers = () => {
     .catch(error => console.log(error))
 }
 
-export default { getAllBeers }
+
+// const createNewUser = () => {
+//     return fetch('http://localhost:3001/users', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           Accept: 'application/json'
+//         },
+//         body: JSON.stringify({
+//           user: {
+//             username: "",
+//             password: "",
+//           }
+//         })
+//       })
+//         .then(r => r.json())
+//         .then(console.log)
+// }
+
+export default { getAllBeers }  

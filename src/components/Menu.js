@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
-import { Input, Menu, Icon } from 'semantic-ui-react'
+import { Input, Menu } from 'semantic-ui-react'
+import LoginForm from './LoginForm'
 
 export default class MenuExampleSecondary extends Component {
   state = { activeItem: 'home' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleItemClick = (e, { name }) => this.setState( { activeItem: name } )
+
+  // handleLoginForm = (name) => {
+  //   this.setState({ activeItem: name })
+  //   return <LoginForm />
+  // }
 
   render() {
     const { activeItem } = this.state
