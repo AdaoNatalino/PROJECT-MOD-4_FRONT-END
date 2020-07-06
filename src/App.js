@@ -3,7 +3,6 @@ import { Segment } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 import { Switch, Route, Router } from "react-router-dom";
-import LoginForm from './components/LoginForm'
 
 import BeersContainer from './containers/BeersContainer'
 import Menu from './components/Menu'
@@ -39,20 +38,16 @@ export default class App extends Component {
 
   render() {
     return (
-        <React.Fragment className="App">
-          <Segment>
-            <Menu updateFilter={this.updateFilter} centered vertical />
-          </Segment>
-          <br/>
-          <Switch>
-            <Route exact path="/" component={ BeersContainer }/>
-            <Route path="/login" exact component={LoginForm} />
-          </Switch>
-          {/* <BeersContainer 
-            handleClick={this.selectBeerToView}
-            beerToView={this.state.beerToView}
-            beers={this.filterBySearch(this.state.beers)}/> */}
-        </React.Fragment>
+      <div className="App">
+        <Segment>
+          <Menu updateFilter={this.updateFilter} centered vertical />
+        </Segment>
+        <br/>
+        <BeersContainer 
+        handleClick={this.selectBeerToView}
+        beerToView={this.state.beerToView}
+        beers={this.filterBySearch(this.state.beers)}/>
+      </div>
     );
   }
 }
