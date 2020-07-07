@@ -1,11 +1,32 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Grid, Image, Label, Segment, Card, Icon } from 'semantic-ui-react'
 
-export default class AccountDetails extends Component {
-    render() {
-        return (
-            <div>
-                Account Details
-            </div>
-        )
-    }
-}
+const LabelExampleRibbon = () => (
+    <Grid.Column>
+      <Segment raised>
+        <Label tag color='red'> Overview  </Label>
+        <Label  color='orange'> Account Details </Label>
+        <Card centered>
+            <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
+            <Card.Content>
+            <Card.Header>Daniel</Card.Header>
+            <Card.Meta>Joined in 2016</Card.Meta>
+            <Card.Description>
+                Daniel is a comedian living in Nashville.
+            </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+            <a>
+                <Icon name='user' />
+                10 Friends
+            </a>
+            </Card.Content>
+        </Card>
+
+    
+      </Segment>
+    </Grid.Column>
+
+)
+
+export default LabelExampleRibbon

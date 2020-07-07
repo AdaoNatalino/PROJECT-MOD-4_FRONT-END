@@ -37,7 +37,7 @@ class LoginForm extends Component {
     this.props.changeLogInState();
     this.setState({ username: "", password: "" })
     if (this.props.changeLogInState()) {
-      return <Redirect push to="/Home" />;
+      return <Redirect push to="/home"/>;
     }
   };
 

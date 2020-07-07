@@ -147,56 +147,7 @@ class MobileContainer extends Component {
 
     return (
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
-        {/* <Sidebar.Pushable>
-          <Sidebar
-            as={Menu}
-            animation="uncover"
-            inverted
-            vertical
-            visible={sidebarOpened}
-          >
-            <Menu.Item as="a" active>
-              Home
-            </Menu.Item>
-            <Menu.Item as="a">Work</Menu.Item>
-            <Menu.Item as="a">Company</Menu.Item>
-            <Menu.Item as="a">Careers</Menu.Item>
-            <Menu.Item as="a">Log in</Menu.Item>
-            <Menu.Item as="a">Sign Up</Menu.Item>
-          </Sidebar>
 
-          <Sidebar.Pusher
-            dimmed={sidebarOpened}
-            onClick={this.handlePusherClick}
-            style={{ minHeight: "100vh" }}
-          >
-            <Segment
-              inverted
-              textAlign="center"
-              style={{ minHeight: 350, padding: "1em 0em" }}
-              vertical
-            >
-              <Container>
-                <Menu inverted pointing secondary size="large">
-                  <Menu.Item onClick={this.handleToggle}>
-                    <Icon name="sidebar" />
-                  </Menu.Item>
-                  <Menu.Item position="right">
-                    <Button as="a" inverted>
-                      Log in
-                    </Button>
-                    <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
-                      Sign Up
-                    </Button>
-                  </Menu.Item>
-                </Menu>
-              </Container>
-              <HomepageHeading mobile />
-            </Segment>
-
-            {children}
-          </Sidebar.Pusher>
-        </Sidebar.Pushable> */}
       </Responsive>
     );
   }
@@ -278,45 +229,6 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-
-    {/* <Segment style={{ padding: "8em 0em" }} vertical>
-      <Container text>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned
-          how to master the art of doing nothing by providing massive amounts of
-          whitespace and generic content that can seem massive, monolithic and
-          worth your attention.
-        </p>
-        <Button as="a" size="large">
-          Read More
-        </Button>
-
-        <Divider
-          as="h4"
-          className="header"
-          horizontal
-          style={{ margin: "3em 0em", textTransform: "uppercase" }}
-        >
-          <a href="#root">Case Studies</a>
-        </Divider>
-
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur
-          filler content, but it's really true. It took years of gene splicing
-          and combinatory DNA research, but our bananas can really dance.
-        </p>
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
-      </Container>
-    </Segment> */}
-
     <Segment inverted vertical style={{ padding: "2em 0em" }}>
       <Container>
         <Grid divided inverted stackable>
@@ -328,15 +240,7 @@ const HomepageLayout = () => (
                 <List.Item as="a" href="https://github.com/zDougl4s" target="_blank">Douglas Martin</List.Item>
               </List>
             </Grid.Column>
-            {/* <Grid.Column width={3}>
-              <Header inverted as="h4" content="Services" />
-              <List link inverted>
-                <List.Item as="a">Banana Pre-Order</List.Item>
-                <List.Item as="a">DNA FAQ</List.Item>
-                <List.Item as="a">How To Access</List.Item>
-                <List.Item as="a">Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column> */}
+         
             <Grid.Column width={10}>
               <Header as="h1" inverted >
                 We are Software Engineers! 
