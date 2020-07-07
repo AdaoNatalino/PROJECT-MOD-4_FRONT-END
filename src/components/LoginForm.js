@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Form, Button, Checkbox } from 'semantic-ui-react'
 import { Redirect } from "react-router-dom";
 
-
 import API from '../API';
 
 class LoginForm extends Component {
@@ -36,9 +35,6 @@ class LoginForm extends Component {
     API.logInUser(userData)
     this.props.changeLogInState();
     this.setState({ username: "", password: "" })
-    if (this.props.changeLogInState()) {
-      return <Redirect push to="/home"/>;
-    }
   };
 
 
@@ -51,6 +47,8 @@ class LoginForm extends Component {
   
   render() {
     return (
+      <div>
+      {this.props.loggedIn ? <Redirect push to="/beers"/> : null}
       <Form onSubmit={this.handleLogin}>
       <Form.Field>
         <label>Username</label>
@@ -70,6 +68,7 @@ class LoginForm extends Component {
       </Form.Field>
       <Button type='submit'>Submit</Button>
     </Form>
+    </div>
     )
   }
 }

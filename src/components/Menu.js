@@ -55,7 +55,7 @@ export default class MenuExampleSecondary extends Component {
         <Menu.Menu position='right'>
        
           <Menu.Item>
-            <Input onChange={this.props.updateFilter} icon='search' placeholder='Search...' />
+            <Input onChange={this.props.updateFilter} icon='search' placeholder='Beers Page Search...' />
           </Menu.Item>
         
           {this.props.loggedIn ? 

@@ -72,7 +72,9 @@ export default class App extends Component {
               <HomePage/>
           </Route>
           <Route exact path="/login">
-            <LoginForm changeLogInState={this.changeLogInState} />
+            <LoginForm 
+            loggedIn={this.state.loggedIn}
+            changeLogInState={this.changeLogInState} />
           </Route>
           <Route exact path="/beers">
             <BeersContainer 
