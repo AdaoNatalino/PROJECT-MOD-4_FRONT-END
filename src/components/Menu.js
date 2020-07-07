@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Input, Menu } from 'semantic-ui-react'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default class MenuExampleSecondary extends Component {

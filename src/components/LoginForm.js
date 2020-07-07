@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Form, Button, Checkbox } from 'semantic-ui-react'
+import { Redirect } from "react-router-dom";
+
+
 import API from '../API';
 
 class LoginForm extends Component {
@@ -9,15 +12,13 @@ class LoginForm extends Component {
     password: "",
   };
   
-    handleInputChange = (event) => {
-      this.setState({
-        [event.target.id]: event.target.value,
-      });
-    };
+  handleInputChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    });
+  };
 
-    getToken = () => {
-      return localStorage.getItem("jwt");
-    };
+  getToken = () => localStorage.getItem("jwt");
 
   handleCreate = (event) => {
     event.preventDefault();
@@ -34,6 +35,10 @@ class LoginForm extends Component {
     const userData = { username, password };
     API.logInUser(userData)
     this.props.changeLogInState();
+    this.setState({ username: "", password: "" })
+    if (this.props.changeLogInState()) {
+      return <Redirect push to="/Home" />;
+    }
   };
 
 
