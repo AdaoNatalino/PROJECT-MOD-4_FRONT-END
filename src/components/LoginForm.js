@@ -17,7 +17,6 @@ class LoginForm extends Component {
     });
   };
 
-
   handleCreate = (event) => {
     event.preventDefault();
     event.target.reset();

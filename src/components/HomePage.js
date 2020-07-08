@@ -62,7 +62,7 @@ class DesktopContainer extends Component {
 
   render() {
     const { children } = this.props;
-    const { fixed } = this.state;
+    // const { fixed } = this.state;
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -97,8 +97,8 @@ class MobileContainer extends Component {
     this.setState({ sidebarOpened: !this.state.sidebarOpened });
 
   render() {
-    const { children } = this.props;
-    const { sidebarOpened } = this.state;
+    // const { children } = this.props;
+    // const { sidebarOpened } = this.state;
 
     return (
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>

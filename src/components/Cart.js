@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ItemDetails from "./ItemDetails"
 import { Link } from "react-router-dom";
-import { Grid, Segment, Icon, Header } from 'semantic-ui-react'
+import { Grid, Segment, Icon, Header, Button } from 'semantic-ui-react'
 
 
 export default class Cart extends Component {
@@ -18,72 +18,33 @@ export default class Cart extends Component {
 
     render() {
         return (
-        <Grid stackable columns={2}>  
+        <Grid columns={2}>  
+            <Grid.Column >
+                <Header as='h2'>
+                    <Icon name="shopping cart"/> Shopping Cart   
+                </Header>
+                <Segment inverted secondary >
+                    { this.ItemDetailsToRender() }
+                </Segment>
+            </Grid.Column>
             <Grid.Column>
-        <div className="container">
-            <div className="row">
-                <div className="col-xs-8">
-                    <div className="panel panel-info">
-                        <div className="panel-heading">
-                            <div className="panel-title">
-                                <div className="row">
-                                    <div className="col-xs-6">
-                                    <Header as='h1'>Shopping Cart</Header>
-
-                                    </div>
-                                    <div className="col-xs-6"><br/><br/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="panel-body">
-                            <Segment inverted secondary>
-                            { this.ItemDetailsToRender() }
-                            </Segment>
-                        </div>
-                            <div className="row">
-                                <div className="text-center">
-                                    
-                                    <div className="col-xs-3">
-                                    </div>
-                                </div>
-                            </div>
-                        <div className="panel-footer">
-                            <div className="row text-center">  
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </Grid.Column>
-        <Grid.Column>
-            <div className="col-xs-9">
-                <Segment inverted>
+                <Segment inverted >
                     <Icon name="fire"/>Are you ready?
                     <Icon name="shop"/>
                 </Segment>
-            </div>
-            <Segment inverted>
-                <div className="col-xs-9">
+                <Segment inverted>
                     <h4 className="text-center">Total <strong>£{ this.totalCheckout() }</strong></h4><br/>
-                </div><br/>
-                <div className="col-xs-3">
-                    <button type="button" className="btn btn-success btn-block">
+                    <Button color="green" fluid>
                     <Icon name="money"/> Checkout
-                    </button><br/>
+                    </Button><br/>
                     <Link to="/beers">
-                    <button type="button" className="btn btn-primary btn-sm btn-block">
+                    <Button fluid color="twitter">
                             <Icon name="add to cart"/> Continue shopping
-                    </button>
+                    </Button>
                     </Link>
-                </div>
-            </Segment> 
-        </Grid.Column>
-        </Grid>
-                            
+                </Segment> 
+            </Grid.Column>
+        </Grid>                  
         )   
     }
 }
-
-
