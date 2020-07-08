@@ -17,7 +17,6 @@ class LoginForm extends Component {
     });
   };
 
-  getToken = () => localStorage.getItem("jwt");
 
   handleCreate = (event) => {
     event.preventDefault();
@@ -39,7 +38,7 @@ class LoginForm extends Component {
 
 
   logOut = () => {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem("jwt")
     this.setState({
       loggedIn: false,
     });
@@ -74,3 +73,4 @@ class LoginForm extends Component {
 }
 
 export default LoginForm
+

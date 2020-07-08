@@ -7,6 +7,7 @@ export default class BeersContainer extends Component {
     
     renderAllBeers = () => this.props.beers.map(beer => 
         <BeerCard
+         addBeerToCart={this.props.addBeerToCart}
          handleClick={this.props.handleClick} 
          key={beer.id} 
          beer={beer}/> 
@@ -16,7 +17,8 @@ export default class BeersContainer extends Component {
         return (
             <>
                 {this.props.beerToView
-                ? <BeerDetails 
+                ? <BeerDetails
+                    addBeerToCart={this.props.addBeerToCart}
                     handleClick={this.props.handleClick}
                     beer={this.props.beerToView} 
                 />

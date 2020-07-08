@@ -1,23 +1,30 @@
 import React, { Component } from 'react'
+import { Image, Button, Icon, Segment } from 'semantic-ui-react'
+
 
 export default class ItemDetails extends Component {
 
     render() {
-        
+        const beer = this.props.beer
         return (
+            <Segment>
             <div className="row">
-            <div className="col-xs-2"><img className="img-responsive" src="http://placehold.it/100x70"/>
+            <div className="col-xs-2"><Image size="mini" src={beer.image_url}/><br/><br/>
             </div>
-            <div className="col-xs-4">
-                <h4 className="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
-            </div>
+            {/* <div className="col-xs-4">
+        <h4 className="product-name"><strong>{beer.name}</strong></h4><h4><small>{beer.tagline}</small></h4>
+            </div> */}
             <div className="col-xs-6">
                 <div className="col-xs-6 text-right">
-                    <h6><strong>25.00 <span className="text-muted">x</span></strong></h6>
+                    <h6><strong> 1 <span className="text-muted">x </span></strong></h6>
+                </div>  
+                <div className="col-xs-4" fluid >
+                    <input type="text" className="form-control input-sm" value={`£${beer.price}`}/>
                 </div>
-                <div className="col-xs-4">
-                    <input type="text" className="form-control input-sm" value="1"/>
-                </div>
+                <Button onClick={() => this.props.removeBeerFromCart(beer)}
+                color='google plus'> 
+                <Icon name='delete' /> Remove Item from Cart
+                </Button>
                 <div className="col-xs-2">
                     <button type="button" className="btn btn-link btn-xs">
                         <span className="glyphicon glyphicon-trash"> </span>
@@ -25,6 +32,7 @@ export default class ItemDetails extends Component {
                 </div>
             </div>
         </div>
+        </Segment>
         )
     }
 }

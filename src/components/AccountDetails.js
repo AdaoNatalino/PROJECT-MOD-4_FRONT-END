@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Grid, Image, Label, Segment, Card, Icon } from 'semantic-ui-react'
 
-const LabelExampleRibbon = () => (
+
+  const token = localStorage.getItem("jwt");
+  const user = token ? JSON.parse(atob(token.split(".")[1])) : null
+
+
+const LabelExampleRibbon = () => {
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    const user = token ? JSON.parse(atob(token.split(".")[1])) : null
+  },)
+    
+  return(
     <Grid.Column>
       <Segment raised>
         <Label tag color='red'> Overview  </Label>
@@ -9,7 +21,7 @@ const LabelExampleRibbon = () => (
         <Card centered>
             <Image src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' wrapped ui={false} />
             <Card.Content>
-            <Card.Header>Daniel</Card.Header>
+            <Card.Header>{user.username}</Card.Header>
             <Card.Meta>Joined in 2016</Card.Meta>
             <Card.Description>
                 Daniel is a comedian living in Nashville.
@@ -21,12 +33,10 @@ const LabelExampleRibbon = () => (
                 10 Friends
             </a>
             </Card.Content>
-        </Card>
-
-    
+        </Card>    
       </Segment>
     </Grid.Column>
-
-)
+  )
+}
 
 export default LabelExampleRibbon

@@ -20,7 +20,8 @@ export default class App extends Component {
     beers: [],
     beerToView: null,
     search: "",
-    loggedIn: false
+    loggedIn: false,
+    inCart: []
   }
 
   componentDidMount = () => {
@@ -28,6 +29,18 @@ export default class App extends Component {
           this.setState( { beers: data } )
       })
     this.checkIfLoggedIn();
+  }
+
+  addBeerToCart = (beer) => {
+    // debugger
+    const beers = [...this.state.inCart, beer]
+    localStorage.setItem("cart", beers)
+    this.setState({ inCart: beers })
+  }
+
+  removeBeerFromCart = (beer) => {
+    const array = [...this.state.inCart].filter(b => b !== beer)
+    this.setState({ inCart: array })
   }
 
   checkIfLoggedIn = () => {
@@ -79,7 +92,8 @@ export default class App extends Component {
             changeLogInState={this.changeLogInState} />
           </Route>
           <Route exact path="/beers">
-            <BeersContainer 
+            <BeersContainer
+            addBeerToCart={this.addBeerToCart} 
             handleClick={this.selectBeerToView}
             beerToView={this.state.beerToView}
             beers={this.filterBySearch(this.state.beers)}/>
@@ -88,7 +102,9 @@ export default class App extends Component {
               <AccountDetails/>
           </Route>
           <Route exact path="/cart">
-              <Cart beers={this.state.beers}/>
+              <Cart 
+              removeBeerFromCart={this.removeBeerFromCart}
+              inCart={this.state.inCart}/>
           </Route>
         </Switch>
         </Router>

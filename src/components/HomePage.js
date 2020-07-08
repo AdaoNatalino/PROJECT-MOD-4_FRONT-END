@@ -8,23 +8,17 @@ import "semantic-ui-css/semantic.min.css";
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
   Image,
   List,
-  Menu,
   Responsive,
   Segment,
-  Sidebar,
   Visibility,
 } from "semantic-ui-react";
 
-/* eslint-disable react/no-multi-comp */
-/* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
- * such things.
- */
+
 const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
@@ -59,10 +53,7 @@ HomepageHeading.propTypes = {
   mobile: PropTypes.bool
 };
 
-/* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
- * It can be more complicated, but you can create really flexible markup.
- */
+
 class DesktopContainer extends Component {
   state = {};
 
