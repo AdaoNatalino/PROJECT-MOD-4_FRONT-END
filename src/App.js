@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Segment } from 'semantic-ui-react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import BeersContainer from './containers/BeersContainer';
@@ -12,7 +12,6 @@ import LoginForm from './components/LoginForm';
 import AccountDetails from './components/AccountDetails';
 import HomePage from './components/HomePage';
 import Cart from './components/Cart';
-
 
 export default class App extends Component {
 

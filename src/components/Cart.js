@@ -3,7 +3,6 @@ import ItemDetails from "./ItemDetails"
 import { Link } from "react-router-dom";
 import { Grid, Segment, Icon, Header, Button } from 'semantic-ui-react'
 
-
 export default class Cart extends Component {
 
     ItemDetailsToRender = () => this.props.inCart.map(beer => < ItemDetails
@@ -33,14 +32,14 @@ export default class Cart extends Component {
                     <Icon name="shop"/>
                 </Segment>
                 <Segment inverted>
-                    <h4 className="text-center">Total <strong>£{ this.totalCheckout() }</strong></h4><br/>
+                    <h4 className="text-center">Total: <strong>£{ this.totalCheckout() }</strong></h4><br/>
                     <Button color="green" fluid>
-                    <Icon name="money"/> Checkout
+                        <Icon name="money"/> Checkout
                     </Button><br/>
                     <Link to="/beers">
-                    <Button fluid color="twitter">
-                            <Icon name="add to cart"/> Continue shopping
-                    </Button>
+                        <Button fluid color="twitter">
+                                <Icon name="add to cart"/> Continue shopping
+                        </Button>
                     </Link>
                 </Segment> 
             </Grid.Column>

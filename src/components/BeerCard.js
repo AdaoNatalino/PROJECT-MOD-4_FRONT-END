@@ -13,9 +13,7 @@ export default class Beer extends Component {
                 <span className='date'>Style: {beer.style}</span>
                 </Card.Description>
                 <Card.Description > Country: {beer.country} </Card.Description>
-                <Card.Description >
-                Price: £{beer.price}
-                </Card.Description>
+                <Card.Description > Price: £{beer.price} </Card.Description>
                 </Card.Content>
                 <Card.Content >
                 <Button
