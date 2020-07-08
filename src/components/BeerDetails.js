@@ -23,7 +23,8 @@ export default class BeerDetails extends Component {
                     <Card.Description> <strong>Description:</strong> {` ${beer.description}`} </Card.Description><br></br>
                     <Card.Description> <strong>Food Pairing:</strong> {` ${beer.food_pairing}`} </Card.Description><br></br>
                     <Card.Description> <strong>Tips:</strong> {beer.brewers_tips} </Card.Description><br></br>
-
+                    
+                    <Card.Description> <strong>Quantity:</strong> {beer.quantity} </Card.Description>
                     <Card.Description> <strong>Price: £</strong>{beer.price} </Card.Description> <br></br>
 
                     </Card.Content>

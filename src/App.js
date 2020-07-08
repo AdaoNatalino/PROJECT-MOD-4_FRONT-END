@@ -1,28 +1,96 @@
 import React, { Component } from 'react';
-import { Segment } from 'semantic-ui-react'
-import 'semantic-ui-css/semantic.min.css'
+import { Segment } from 'semantic-ui-react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import 'semantic-ui-css/semantic.min.css';
 import './App.css';
-import { Switch, Route, Router } from "react-router-dom";
-import LoginForm from './components/LoginForm'
-import Menu from './components/Menu'
-import BeersContainer from './containers/BeersContainer'
+import BeersContainer from './containers/BeersContainer';
+import Menu from './components/Menu';
+import API from './API';
+import LoginForm from './components/LoginForm';
+import AccountDetails from './components/AccountDetails';
+import HomePage from './components/HomePage';
+import Cart from './components/Cart';
 
 
 export default class App extends Component {
 
+  state = {
+    beers: [],
+    beerToView: null,
+    search: "",
+    loggedIn: false
+  }
 
+  componentDidMount = () => {
+    API.getAllBeers().then(data => {
+          this.setState( { beers: data } )
+      })
+    this.checkIfLoggedIn();
+  }
+
+  checkIfLoggedIn = () => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      this.setState({ loggedIn: true });
+    }
+  };
+
+  changeLogInState = () => this.setState({ loggedIn: true })
+
+  logOut = () => {
+    localStorage.removeItem("jwt");
+    this.setState({
+      loggedIn: false,
+    });
+  };
+
+  selectBeerToView = (beer) => {
+  this.setState({ beerToView: beer })
+  }  
+
+  updateFilter = (e) => {
+    this.setState({ search: e.target.value })
+  }
+
+  filterBySearch = (arrayOfBeers) => {
+    return arrayOfBeers.filter(beer => beer.name.toLowerCase().includes(this.state.search.toLocaleLowerCase()))
+  }
+  
   render() {
     return (
-        <React.Fragment className="App">
+      <div className="App">
+        <Router>
           <Segment>
-            <Menu updateFilter={this.updateFilter} centered vertical />
+            <Menu centered vertical
+             logOut={this.logOut}
+             loggedIn={this.state.loggedIn} 
+             updateFilter={this.updateFilter} />
           </Segment>
-          <br/>
-          <Switch>
-            <Route exact path="/" component={ BeersContainer }/>
-            <Route path="/login" exact component={LoginForm} />
-          </Switch>
-        </React.Fragment>
+        <br/>
+        <Switch>
+          <Route exact path="/home">
+              <HomePage/>
+          </Route>
+          <Route exact path="/login">
+            <LoginForm 
+            loggedIn={this.state.loggedIn}
+            changeLogInState={this.changeLogInState} />
+          </Route>
+          <Route exact path="/beers">
+            <BeersContainer 
+            handleClick={this.selectBeerToView}
+            beerToView={this.state.beerToView}
+            beers={this.filterBySearch(this.state.beers)}/>
+          </Route>
+          <Route exact path="/account">
+              <AccountDetails/>
+          </Route>
+          <Route exact path="/cart">
+              <Cart/>
+          </Route>
+        </Switch>
+        </Router>
+      </div>
     );
   }
 }

@@ -7,22 +7,42 @@ const getAllBeers = () => {
 }
 
 
-// const createNewUser = () => {
-//     return fetch('http://localhost:3001/users', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//           Accept: 'application/json'
-//         },
-//         body: JSON.stringify({
-//           user: {
-//             username: "",
-//             password: "",
-//           }
-//         })
-//       })
-//         .then(r => r.json())
-//         .then(console.log)
-// }
+const createNewUser = (userData) => {
+    fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ user: userData }),
+      })
+        .then((res) => res.json())
+        .then((res) => {
+          localStorage.setItem("jwt", res.jwt);
+          return res;
+        })
+        // .then(console.log);
+}
 
-export default { getAllBeers }  
+const logInUser = (userData) => {
+  fetch("http://localhost:3001/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({ user: userData }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        localStorage.setItem("jwt", res.jwt);
+        // this.setState({
+        //   loggedIn: true,
+        // });
+        return res;
+      })
+      // .then(console.log);
+}
+
+export default { getAllBeers, createNewUser, logInUser }  
+
