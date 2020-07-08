@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Segment } from 'semantic-ui-react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './App.css';
 import BeersContainer from './containers/BeersContainer';
 import Menu from './components/Menu';
@@ -86,7 +88,7 @@ export default class App extends Component {
               <AccountDetails/>
           </Route>
           <Route exact path="/cart">
-              <Cart/>
+              <Cart beers={this.state.beers}/>
           </Route>
         </Switch>
         </Router>
