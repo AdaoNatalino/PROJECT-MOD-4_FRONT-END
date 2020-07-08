@@ -176,20 +176,28 @@ const HomepageLayout = () => (
         <Grid.Row textAlign="center">
           <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              "What a Company"
+              "We want you to be happy like this!"
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              That is what they all say about us
-            </p>
+            <Image
+              centered
+              bordered
+              rounded
+              size="large"
+              src="https://i.insider.com/5b8428115c5e5236008b5ab7?width=1100&format=jpeg&auto=webp"
+            />
+           
           </Grid.Column>
           <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              "I shouldn't have gone with their competitor."
+              "Not like this!"
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              <Image avatar src="/images/avatar/large/nan.jpg" />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
+            <Image
+              centered
+              bordered
+              rounded
+              size="large"
+              src="https://piximus.net/media/12224/hilarious-drunk-and-wasted-people-2-33.jpg"
+            />
           </Grid.Column>
         </Grid.Row>
       </Grid>
