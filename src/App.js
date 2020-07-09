@@ -24,7 +24,7 @@ export default class App extends Component {
   }
 
   clearCart = () => {
-    
+    this.setState({ inCart: null })
   }
   
 
@@ -106,7 +106,8 @@ export default class App extends Component {
               <AccountDetails/>
           </Route>
           <Route exact path="/cart">
-              <Cart 
+              <Cart
+              clearCart={this.clearCart} 
               removeBeerFromCart={this.removeBeerFromCart}
               inCart={this.state.inCart}/>
           </Route>

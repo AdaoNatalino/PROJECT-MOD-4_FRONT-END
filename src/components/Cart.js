@@ -37,7 +37,9 @@ export default class Cart extends Component {
                     {/* <Button color="green" fluid>
                         <Icon name="money"/> Checkout
                     </Button><br/> */}
-                        <PayPal total={this.totalCheckout()} /><br/>
+                        <PayPal
+                         clearCart={this.clearCart} 
+                         total={this.totalCheckout()} /><br/>
                     <Link to="/beers">
                         <Button fluid color="twitter">
                                 <Icon name="add to cart"/> Continue shopping
