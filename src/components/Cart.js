@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ItemDetails from "./ItemDetails"
 import { Link } from "react-router-dom";
 import { Grid, Segment, Icon, Header, Button, Card } from 'semantic-ui-react'
+import PayPal from "./PayPal"
 
 export default class Cart extends Component {
 
@@ -36,6 +37,7 @@ export default class Cart extends Component {
                     <Button color="green" fluid>
                         <Icon name="money"/> Checkout
                     </Button><br/>
+                        <PayPal total={this.totalCheckout()}/>
                     <Link to="/beers">
                         <Button fluid color="twitter">
                                 <Icon name="add to cart"/> Continue shopping

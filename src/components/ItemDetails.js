@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Image, Button, Icon, Segment, Header, Card } from 'semantic-ui-react'
+import { Image, Button, Icon, Card } from 'semantic-ui-react'
 
 
 export default class ItemDetails extends Component {
@@ -32,9 +32,3 @@ export default class ItemDetails extends Component {
 }
 
 
-{/* <Segment size="mini">
-<Image size="mini" src={beer.image_url}/><br/>
-<Header as='h3'>Name: {beer.name} </Header>
-<Header as='h3'>Price: £{beer.price} </Header>
-            
-</Segment> */}
