@@ -20,7 +20,8 @@ export default class App extends Component {
     beerToView: null,
     search: "",
     loggedIn: false,
-    inCart: []
+    inCart: [],
+    currentUser: null
   }
 
   componentDidMount = () => {
@@ -29,6 +30,8 @@ export default class App extends Component {
       })
     this.checkIfLoggedIn();
   }
+
+  setCurrentUser = (user) => this.setState( {currentUser: user} ) 
 
   clearCart = () => this.setState({ inCart: [] })
   
@@ -89,7 +92,8 @@ export default class App extends Component {
               <HomePage/>
           </Route>
           <Route exact path="/login">
-            <LoginForm 
+            <LoginForm
+            setCurrentUser={this.setCurrentUser} 
             loggedIn={this.state.loggedIn}
             changeLogInState={this.changeLogInState} />
           </Route>

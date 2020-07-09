@@ -6,6 +6,10 @@ const getAllBeers = () => {
     .catch(error => console.log(error))
 }
 
+const getToken = () => localStorage.getItem("jwt");
+
+const getUser = () => JSON.parse(atob(this.getToken().split(".")[1]));
+
 
 const createNewUser = (userData) => {
     fetch("http://localhost:3001/users", {
@@ -45,5 +49,15 @@ const logInUser = (userData) => {
       // .then(console.log);
 }
 
-export default { getAllBeers, createNewUser, logInUser }  
+const getUserProfile = () => {
+  fetch("http://localhost:3001/profile", {
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+    },
+  })
+    .then((res) => res.json())
+    .then(console.log);
+};
+
+export default { getAllBeers, createNewUser, logInUser, getUserProfile, getUser }  
 
