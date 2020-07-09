@@ -1,10 +1,7 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
-
 import "semantic-ui-css/semantic.min.css";
-
 import {
   Button,
   Container,
@@ -53,7 +50,6 @@ HomepageHeading.propTypes = {
   mobile: PropTypes.bool
 };
 
-
 class DesktopContainer extends Component {
   state = {};
 
@@ -62,7 +58,6 @@ class DesktopContainer extends Component {
 
   render() {
     const { children } = this.props;
-    // const { fixed } = this.state;
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -71,9 +66,7 @@ class DesktopContainer extends Component {
           onBottomPassed={this.showFixedMenu}
           onBottomPassedReverse={this.hideFixedMenu}
         >
-         
         </Visibility>
-
         {children}
       </Responsive>
     );
@@ -97,8 +90,6 @@ class MobileContainer extends Component {
     this.setState({ sidebarOpened: !this.state.sidebarOpened });
 
   render() {
-    // const { children } = this.props;
-    // const { sidebarOpened } = this.state;
 
     return (
       <Responsive maxWidth={Responsive.onlyMobile.maxWidth}>
@@ -188,7 +179,6 @@ const HomepageLayout = () => (
               rounded
               size="large"
               src="https://i.imgur.com/Od6Sd4Q.jpg"
-             
               // "https://piximus.net/media/12224/hilarious-drunk-and-wasted-people-2-33.jpg"
             />
           </Grid.Column>

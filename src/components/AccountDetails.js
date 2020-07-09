@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Grid, Image, Label, Segment, Card, Icon } from 'semantic-ui-react'
-import API from "../API"
-
 
 const LabelExampleRibbon = ({ user }) => {
 
@@ -18,16 +16,12 @@ const LabelExampleRibbon = ({ user }) => {
             <Card.Meta>I'm here to get drunk</Card.Meta>
             </Card.Content>
             <Card.Content extra>
-            <a>
                 <Icon name='user' /> Edit 
-            </a>
             </Card.Content>
         </Card>    
       </Segment>
     </Grid.Column>
-   
   )
-  
 }
 
 export default LabelExampleRibbon

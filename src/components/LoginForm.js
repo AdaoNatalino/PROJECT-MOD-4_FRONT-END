@@ -36,14 +36,6 @@ class LoginForm extends Component {
     this.props.setCurrentUser(userData.username)
   };
 
-
-  // logOut = () => {
-  //   localStorage.removeItem("jwt")
-  //   this.props.setCurrentUser(null)
-  //   this.setState({ loggedIn: false });
-  //   debugger
-  // };
-  
   render() {
     return (
       <div>
