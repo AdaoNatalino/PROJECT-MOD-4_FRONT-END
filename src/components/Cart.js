@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ItemDetails from "./ItemDetails"
 import { Link } from "react-router-dom";
-import { Grid, Segment, Icon, Header, Button } from 'semantic-ui-react'
+import { Grid, Segment, Icon, Header, Button, Card } from 'semantic-ui-react'
 
 export default class Cart extends Component {
 
@@ -22,9 +22,9 @@ export default class Cart extends Component {
                 <Header as='h2'>
                     <Icon name="shopping cart"/> Shopping Cart   
                 </Header>
-                <Segment inverted secondary >
+                <Card.Group itemsPerRow={4}>
                     { this.ItemDetailsToRender() }
-                </Segment>
+                </Card.Group>
             </Grid.Column>
             <Grid.Column>
                 <Segment inverted >
