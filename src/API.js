@@ -38,6 +38,7 @@ const logInUser = (userData) => {
         localStorage.setItem("jwt", res.jwt);
         // this.setState({
         //   loggedIn: true,
+        //    loggedInUser: res.user,
         // });
         return res;
       })

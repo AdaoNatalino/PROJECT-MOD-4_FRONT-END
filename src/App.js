@@ -23,6 +23,11 @@ export default class App extends Component {
     inCart: []
   }
 
+  clearCart = () => {
+    
+  }
+  
+
   componentDidMount = () => {
     API.getAllBeers().then(data => {
           this.setState( { beers: data } )

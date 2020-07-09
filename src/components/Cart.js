@@ -34,10 +34,10 @@ export default class Cart extends Component {
                 </Segment>
                 <Segment inverted>
                     <h4 className="text-center">Total: <strong>£{ this.totalCheckout() }</strong></h4><br/>
-                    <Button color="green" fluid>
+                    {/* <Button color="green" fluid>
                         <Icon name="money"/> Checkout
-                    </Button><br/>
-                        <PayPal total={this.totalCheckout()}/>
+                    </Button><br/> */}
+                        <PayPal total={this.totalCheckout()} /><br/>
                     <Link to="/beers">
                         <Button fluid color="twitter">
                                 <Icon name="add to cart"/> Continue shopping
