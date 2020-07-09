@@ -33,15 +33,16 @@ class LoginForm extends Component {
     API.logInUser(userData)
     this.props.changeLogInState();
     this.setState({ username: "", password: "" })
+    this.props.setCurrentUser(userData.username)
   };
 
 
-  logOut = () => {
-    localStorage.removeItem("jwt")
-    this.setState({
-      loggedIn: false,
-    });
-  };
+  // logOut = () => {
+  //   localStorage.removeItem("jwt")
+  //   this.props.setCurrentUser(null)
+  //   this.setState({ loggedIn: false });
+  //   debugger
+  // };
   
   render() {
     return (

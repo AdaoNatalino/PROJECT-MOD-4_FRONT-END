@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Segment } from 'semantic-ui-react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import 'semantic-ui-css/semantic.min.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import BeersContainer from './containers/BeersContainer';
@@ -37,7 +36,6 @@ export default class App extends Component {
   
 
   addBeerToCart = (beer) => {
-    // debugger
     const beers = [...this.state.inCart, beer]
     localStorage.setItem("cart", beers)
     this.setState({ inCart: beers })
@@ -59,8 +57,9 @@ export default class App extends Component {
 
   logOut = () => {
     localStorage.removeItem("jwt");
-    this.setState({
+    this.setState({ 
       loggedIn: false,
+      currentUser: null
     });
   };
 
@@ -79,7 +78,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Router >
           <Segment>
             <Menu centered vertical
              logOut={this.logOut}
@@ -105,7 +104,7 @@ export default class App extends Component {
             beers={this.filterBySearch(this.state.beers)}/>
           </Route>
           <Route exact path="/account">
-              <AccountDetails/>
+              <AccountDetails user={this.state.currentUser}/>
           </Route>
           <Route exact path="/cart">
               <Cart

@@ -187,7 +187,9 @@ const HomepageLayout = () => (
               bordered
               rounded
               size="large"
-              src="https://piximus.net/media/12224/hilarious-drunk-and-wasted-people-2-33.jpg"
+              src="https://i.imgur.com/Od6Sd4Q.jpg"
+             
+              // "https://piximus.net/media/12224/hilarious-drunk-and-wasted-people-2-33.jpg"
             />
           </Grid.Column>
         </Grid.Row>
