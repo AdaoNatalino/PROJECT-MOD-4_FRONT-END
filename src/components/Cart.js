@@ -38,7 +38,7 @@ export default class Cart extends Component {
                         <Icon name="money"/> Checkout
                     </Button><br/> */}
                         <PayPal
-                         clearCart={this.clearCart} 
+                         clearCart={this.props.clearCart} 
                          total={this.totalCheckout()} /><br/>
                     <Link to="/beers">
                         <Button fluid color="twitter">
