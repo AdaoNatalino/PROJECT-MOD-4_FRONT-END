@@ -1,4 +1,4 @@
-const URL = `http://localhost:3001/beers`
+const URL = `https://beer-shop-london.herokuapp.com/beers`
 
 const getAllBeers = () => {
     return fetch(URL)
@@ -12,7 +12,7 @@ const getUser = () => JSON.parse(atob(this.getToken().split(".")[1]));
 
 
 const createNewUser = (userData) => {
-    fetch("http://localhost:3001/users", {
+    fetch("https://beer-shop-london.herokuapp.com/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const createNewUser = (userData) => {
 }
 
 const logInUser = (userData) => {
-  fetch("http://localhost:3001/login", {
+  fetch("https://beer-shop-london.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const logInUser = (userData) => {
 }
 
 const getUserProfile = () => {
-  fetch("http://localhost:3001/profile", {
+  fetch("https://beer-shop-london.herokuapp.com/profile", {
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
