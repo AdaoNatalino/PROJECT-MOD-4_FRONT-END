@@ -13,7 +13,7 @@ const LabelExampleRibbon = ({ user }) => {
             <Image src='https://miro.medium.com/fit/c/336/336/2*hVMHEg2qGIlBJGKUSS8VIQ.jpeg' wrapped ui={false} />
             <Card.Content>
             <Card.Header>{user}</Card.Header>
-            <Card.Meta>I'm here to get drunk</Card.Meta>
+            <Card.Meta>I love beers</Card.Meta>
             </Card.Content>
             <Card.Content extra>
                 <Icon name='user' /> Edit 
