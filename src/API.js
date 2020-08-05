@@ -24,7 +24,6 @@ const createNewUser = (userData) => {
           localStorage.setItem("jwt", res.jwt);
           return res;
         })
-        // .then(console.log);
 }
 
 const logInUser = (userData) => {
@@ -39,13 +38,9 @@ const logInUser = (userData) => {
       .then((res) => res.json())
       .then((res) => {
         localStorage.setItem("jwt", res.jwt);
-        // this.setState({
-        //   loggedIn: true,
-        //    loggedInUser: res.user,
-        // });
+    
         return res;
       })
-      // .then(console.log);
 }
 
 const getUserProfile = () => {
