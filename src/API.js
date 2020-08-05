@@ -7,7 +7,6 @@ const getAllBeers = () => {
 }
 
 const getToken = () => localStorage.getItem("jwt");
-
 const getUser = () => JSON.parse(atob(this.getToken().split(".")[1]));
 
 const createNewUser = (userData) => {
