@@ -16,7 +16,7 @@ const LabelExampleRibbon = ({ user }) => {
             <Card.Meta>I Love Beers</Card.Meta>
             </Card.Content>
             <Card.Content extra>
-                <Icon name='user' /> Edit 
+                <Icon name='user' /> Edit Profile
             </Card.Content>
         </Card>    
       </Segment>
