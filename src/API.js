@@ -5,7 +5,6 @@ const getAllBeers = () => {
     .then(resp => resp.json())
     .catch(error => console.log(error))
 }
-
 const getToken = () => localStorage.getItem("jwt");
 const getUser = () => JSON.parse(atob(this.getToken().split(".")[1]));
 
